@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEWTIK | Nukhbat Alsharq Commercial</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">NEWTIK</div>
+
+    <nav>
+        <a href="#home" data-en="Home" data-ar="الرئيسية">Home</a>
+        <a href="#about" data-en="About Us" data-ar="من نحن">About Us</a>
+        <a href="#products" data-en="Products" data-ar="المنتجات">Products</a>
+        <a href="#contact" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+    </nav>
+
+    <button id="langBtn">العربية</button>
+</header>
+
+<section id="home" class="hero">
+    <h1 id="heroTitle">Nukhbat Alsharq Commercial</h1>
+
+    <p id="heroText">
+        Premium Lighting & Electrical Solutions
+    </p>
+</section>
+
+<section id="about">
+    <h2 class="section-title"
+        data-en="About Us"
+        data-ar="من نحن">About Us</h2>
+
+    <p id="aboutText">
+        NEWTIK is a supplier of high-quality lighting and electrical products
+        serving residential, commercial and industrial projects.
+    </p>
+</section>
+
+<section id="products">
+
+    <h2 class="section-title"
+        data-en="Our Products"
+        data-ar="منتجاتنا">Our Products</h2>
+
+    <div class="products">
+
+        <div class="card">
+            <img src="images/SOCKETS.jpg" alt="">
+            <h3>SOCKETS</h3>
+        </div>
+
+        <div class="card">
+            <img src="images/FAN.jpg" alt="">
+            <h3>FANS</h3>
+        </div>
+
+        <div class="card">
+            <img src="images/WALL LIGHTING.jpg" alt="">
+            <h3>WALL LIGHTING</h3>
+        </div>
+
+       
+
+        <div class="card">
+            <img src="images/BILL.jpg" alt="">
+            <h3>Hotel prodects</h3>
+        </div>
+
+       
+
+    </div>
+
+</section>
+
+<section id="contact">
+
+    <h2 class="section-title"
+        data-en="Contact Us"
+        data-ar="تواصل معنا">Contact Us</h2>
+
+    <p>WhatsApp: +966 532288804</p>
+
+    <a class="whatsapp"
+       href="https://wa.me/966532288804">
+       WhatsApp
+    </a>
+
+</section>
+
+<footer>
+    © 2026 NEWTIK
+</footer>
+
+<script>
+
+let arabic = false;
+
+document.getElementById("langBtn").onclick = () => {
+
+    arabic = !arabic;
+
+    document.documentElement.lang = arabic ? "ar" : "en";
+    document.body.dir = arabic ? "rtl" : "ltr";
+
+    document.getElementById("langBtn").innerText =
+        arabic ? "English" : "العربية";
+
+    document.getElementById("heroTitle").innerText =
+        arabic ?
+        "نخبة الشرق التجارية" :
+        "Nukhbat Alsharq Commercial";
+
+    document.getElementById("heroText").innerText =
+        arabic ?
+        "حلول الإضاءة والمنتجات الكهربائية" :
+        "Premium Lighting & Electrical Solutions";
+
+    document.getElementById("aboutText").innerText =
+        arabic ?
+        "شركة نيوتك متخصصة في توريد منتجات الإضاءة والكهربائيات عالية الجودة للمشاريع السكنية والتجارية والصناعية." :
+        "NEWTIK is a supplier of high-quality lighting and electrical products serving residential, commercial and industrial projects.";
+
+    document.querySelectorAll("[data-en]").forEach(el => {
+        el.innerText = arabic ?
+            el.dataset.ar :
+            el.dataset.en;
+    });
+
+};
+
+</script>
+
+</body>
+</html>
